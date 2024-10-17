@@ -17,17 +17,17 @@ include ../Makefile.apps
 
 test-cmp:
 	$(call SPECDIFF, --abstol 1e-05  --reltol 0.0001 --obiwan, run/test.out, data/test/output/test.out)
-	$(call SPECDIFF, --abstol 20  --reltol 10 --obiwan, run/test.stderr, data/test/output/test.stderr)
+	$(call SPECDIFF, --abstol 20  --reltol 10 --obiwan, run/test.mps.info, data/test/output/test.mps.info)
 
 train-cmp:
 	$(call SPECDIFF, --abstol 1e-05  --reltol 20 --obiwan, run/pds-20.mps.out, data/train/output/pds-20.mps.out)
-	$(call SPECDIFF, --abstol 20  --reltol 0.0001 --obiwan, run/pds-20.mps.stderr, data/train/output/pds-20.mps.stderr)
+	$(call SPECDIFF, --abstol 20  --reltol 0.0001 --obiwan, run/pds-20.mps.info, data/train/output/pds-20.mps.info)
 	$(call SPECDIFF, --abstol 1e-05  --reltol 20 --obiwan, run/train.out, data/train/output/train.out)
-	$(call SPECDIFF, --abstol 20  --reltol 0.0001 --obiwan, run/train.stderr, data/train/output/train.stderr)
+	$(call SPECDIFF, --abstol 20  --reltol 0.0001 --obiwan, run/train.mps.info, data/train/output/train.mps.info)
 
 ref-cmp:
 	$(call SPECDIFF, --abstol 1e-05  --reltol 0.02 --obiwan, run/pds-50.mps.out, data/ref/output/pds-50.mps.out)
-	$(call SPECDIFF, --abstol 20  --reltol 0.0001 --obiwan, run/pds-50.mps.stderr, data/ref/output/pds-50.mps.stderr)
+	$(call SPECDIFF, --abstol 20  --reltol 0.0001 --obiwan, run/pds-50.mps.info, data/ref/output/pds-50.mps.info)
 	$(call SPECDIFF, --abstol 1e-05  --reltol 0.02 --obiwan, run/ref.out, data/ref/output/ref.out)
-	$(call SPECDIFF, --abstol 20  --reltol 0.0001 --obiwan, run/ref.stderr, data/ref/output/ref.stderr)
+	$(call SPECDIFF, --abstol 20  --reltol 0.0001 --obiwan, run/ref.mps.info, data/ref/output/ref.mps.info)
 include Makefile.deps
